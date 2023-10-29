@@ -31,7 +31,7 @@ function getQueryParamValue(parameter : any) {
 const songId = getQueryParamValue('params');
 console.log('Song Note:', songId);
 
-window?.addEventListener("touchstart", async (event) => {
+window?.addEventListener("keydown", async (event) => {
   if (!isStarted) {
     isStarted = true;
     await init();
@@ -107,7 +107,7 @@ function playKeysOnClick() {
 }
 
 // Event listener for click event
-document.getElementById('playButto')?.addEventListener("click", playKeysOnClick)
+document.getElementById('playButton')?.addEventListener("click", playKeysOnClick)
 
 // Event listener for touch event
 document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
