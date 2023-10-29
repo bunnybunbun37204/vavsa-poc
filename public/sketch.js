@@ -14,6 +14,8 @@ let _aryRing = [];
 let _aryRotate = [];
 let _aryAryRing = [];
 
+// sketch.js
+
 function setObject() {
   _count = 0;
   _minW = min(width, height) * 1;
@@ -24,7 +26,7 @@ function setObject() {
   stroke(0, 60, 90);
   strokeWeight((_minW / 400) * pixelDensity()); //600 * pixelDensity());
 
-  let numRing = 500;
+  let numRing = 100;
   let posXy = createVector(0, 0);
   let posZNoiseInit_0 = [random(10000), random(10000), random(10000)];
   let rNoiseInit_0 = [random(10000), random(10000), random(10000)];

@@ -5,6 +5,12 @@
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css?family=Bangers|Nosifer&display=swap"
+    rel="stylesheet"
+  />
     <meta name="generator" content={Astro.generator} />
     <title>เพลงผีบอก</title>
   </head>
@@ -35,159 +41,203 @@
       color: #fff;
     }
 
-    .App {
-      text-align: center;
-    }
+/* src/App.css */
 
-    .App-logo {
-      height: 40vmin;
-      pointer-events: none;
-    }
+.App {
+  text-align: center;
+}
 
-    @media (prefers-reduced-motion: no-preference) {
-      .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-      }
-    }
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
-    .App-header {
-      background-color: #282c34;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: calc(10px + 2vmin);
-      color: white;
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
 
-    .App-link {
-      color: #61dafb;
-    }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-    /* Halloween theme */
-    .halloween-container {
-      background-color: #111; /* Dark background color */
-      color: #ff6600; /* Orange text color */
-      text-align: center;
-      font-family: "Bangers", sans-serif; /* Spooky font */
-      padding: 20px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+.App-link {
+  color: #61dafb;
+}
 
-    .halloween-header {
-      font-size: 3rem;
-      text-shadow: 2px 2px 3px black; /* Add a shadow to text */
-    }
+/* Halloween theme */
+.halloween-container {
+  background-color: #111; /* Dark background color */
+  color: #ff6600; /* Orange text color */
+  text-align: center;
+  font-family: 'Bangers', sans-serif; /* Spooky font */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove any default margin */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    /* AudioList.css */
-    .audio-list-container {
-      background-color: #111; /* Dark background color */
-      color: #ff6600; /* Orange text color */
-      padding: 16px;
-      font-family: "Nosifer", sans-serif; /* Spooky font */
-    }
 
-    .audio-list-header {
-      font-size: 2rem;
-      text-align: center;
-    }
 
-    .audio-item {
-      list-style: none;
-      margin: 0;
-      padding: 10px;
-      cursor: pointer;
-      border-bottom: 1px solid #ff6600;
-    }
+/* AudioList.css */
+.audio-list-container {
+  background-color: #111; /* Dark background color */
+  color: #ff6600; /* Orange text color */
+  font-family: 'Nosifer', sans-serif; /* Spooky font */
+}
 
-    .audio-item:hover {
-      background-color: #333; /* Darken the background on hover */
-    }
+.audio-list-header {
+  font-size: 2rem;
+  text-align: center;
+}
 
-    .navbar {
-      background-color: #000; /* Black background color */
-      color: #ff80ab; /* Pink text color */
-      text-align: center;
-      font-family: "Comic Sans MS", cursive; /* Playful font */
-      padding: 10px;
-    }
+.audio-item {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ff6600;
+}
 
-    .halloween-input-melody {
-      background-color: #111; /* Dark background color */
-      color: #ff6600; /* Orange text color */
-      text-align: center;
-      font-family: "Bangers", sans-serif; /* Spooky font */
-      padding: 20px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+.audio-item:hover {
+  background-color: #333; /* Darken the background on hover */
+}
 
-    /* Halloween-themed button */
-    .halloween-button {
-      background-color: #ff6600; /* Orange background color */
-      color: #111; /* Dark text color */
-      padding: 10px 20px;
-      font-size: 1.2rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      text-transform: uppercase;
-      box-shadow: 2px 2px 5px #000; /* Add shadow to the button */
-    }
+.navbar {
+  background-color: #000; /* Black background color */
+  color: #ff80ab; /* Pink text color */
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive; /* Playful font */
+  padding: 10px;
+}
 
-    .halloween-input {
-      background-color: #ff6600; /* Orange background color */
-      color: #000; /* Black text color */
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-bottom: 10px;
-      width: 100%;
-      outline: none;
-    }
+.halloween-input-melody {
+  background-color: #111; /* Dark background color */
+  color: #ff6600; /* Orange text color */
+  text-align: center;
+  font-family: 'Bangers', sans-serif; /* Spooky font */
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    .halloween-input::placeholder {
-      color: #333; /* Dark gray placeholder text */
-    }
+/* Halloween-themed button */
+.halloween-button {
+  background-color: #ff6600; /* Orange background color */
+  color: #111; /* Dark text color */
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px #000; /* Add shadow to the button */
+}
 
-    /* HalloweenReceipt.css */
-    .halloween-container {
-      background: url("https://cdn.pic.in.th/file/picinth/-random---.jpeg")
-        repeat; /* Use a paper texture image */
-      color: #ff6600; /* Orange text color */
-      text-align: center;
-      font-family: "Bangers", sans-serif; /* Spooky font */
-      padding: 20px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+.halloween-input {
+  background-color: #ff6600; /* Orange background color */
+  color: #000; /* Black text color */
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+}
 
-    .halloween-header {
-      font-size: 3rem;
-      text-shadow: 2px 2px 3px black; /* Add a shadow to text */
-      background-color: transparent; /* Make the background transparent */
-      color: #ff6600; /* Orange text color */
-    }
+.toplogo {
 
-    @keyframes App-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+  height : 30%;
+  width : 30%;
+  margin-top: 5px;
+}
+
+.halloween-input::placeholder {
+  color: #333; /* Dark gray placeholder text */
+}
+
+/* HalloweenReceipt.css */
+.halloween-container {
+  background: url('https://sv1.picz.in.th/images/2023/10/27/ddsnoeD.jpeg') repeat; /* Use a paper texture image */
+  color: #ff6600; /* Orange text color */
+  text-align: center;
+  font-family: 'Bangers', sans-serif; /* Spooky font */
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.halloween-header {
+  font-size: 3rem;
+  text-shadow: 2px 2px 3px black; /* Add a shadow to text */
+  background-color: transparent; /* Make the background transparent */
+  color: #ff6600; /* Orange text color */
+}
+
+.navbar-link {
+  font-family: 'Nosifer', sans-serif; /* Spooky font */
+  font-weight: 100;
+  font-size: small;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Red border */
+hr.new1 {
+  border-top: 0.2px solid black;
+}
+
+/* Dashed red border */
+hr.new2 {
+  border-top: 1px dashed black;
+}
+
+/* Dotted red border */
+hr.new3 {
+  border-top: 1px dotted black;
+}
+
+/* Thick red border */
+hr.new4 {
+  border: 0.5px solid black;
+}
+
+/* Large rounded green border */
+hr.new5 {
+  border: 10px solid black;
+  border-radius: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
   </style>
 </html>

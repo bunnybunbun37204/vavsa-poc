@@ -66,6 +66,19 @@ export const chordSynth = new Tone.PolySynth({
 
 // lead
 
+
+export const arpPart = new Tone.Pattern({
+  callback: function (time, note) {
+    if (note) mainSynth.triggerAttackRelease(note, "16n", time);
+  },
+  interval: "8n",
+  values: ["C4", "E4", "G4", "B3"],
+  pattern: "up",
+  humanize: true,
+  
+});
+
+
 export const mainSynth = new Tone.PolySynth({
   volume: -10,
   maxPolyphony: 25,

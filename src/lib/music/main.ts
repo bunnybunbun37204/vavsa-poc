@@ -1,7 +1,7 @@
 import * as Tone from "tone";
 // import { Piano } from "@tonejs/piano/build/piano/Piano";
 import { ambience } from "./background";
-import { playKeys, stopKeys } from "./play";
+import { playKeys, playKeys2, stopKeys } from "./play";
 import {
   setBluesScale,
   setMajorScale,
@@ -11,6 +11,7 @@ import {
   setPentatonicMinorScale,
   setPentatonicScale,
 } from "./scales";
+import { arpPart } from "./synths";
 
 let isStarted = false;
 
@@ -18,6 +19,17 @@ const allowedKeys = ["a", "s", "d", "f", "g", "h", "j", "k"];
 const keysPressed = new Map<string, boolean>();
 
 // export let piano: Piano;
+
+// Function to get the value of a specific query parameter
+function getQueryParamValue(parameter : any) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(parameter);
+}
+
+// Get the value of 'songId' parameter from the URL
+const songId = getQueryParamValue('params');
+console.log('Song Note:', songId);
 
 window?.addEventListener("keydown", async (event) => {
   if (!isStarted) {
@@ -27,7 +39,11 @@ window?.addEventListener("keydown", async (event) => {
 
   if (!keysPressed.get(event.key) && allowedKeys.includes(event.key)) {
     keysPressed.set(event.key, true);
-    playKeys(keysPressed);
+    //playKeys(keysPressed);
+    if (typeof songId === "string") {
+      const notes = songId.split(",");
+      playKeys2(notes);
+    }
   }
 });
 

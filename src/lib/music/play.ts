@@ -1,5 +1,5 @@
 import * as Tone from "tone";
-import { harmonySynth, mainSynth } from "./synths";
+import { arpPart, harmonySynth, mainSynth } from "./synths";
 import { keys } from "./scales";
 
 export function playKeys(playedKeys: Map<string, boolean>) {
@@ -18,6 +18,16 @@ export function playKeys(playedKeys: Map<string, boolean>) {
       }
     }
   });
+}
+
+export function playKeys2(notes : string[]) {
+  // record the sounds
+  arpPart.values = notes;
+  arpPart.start(0);
+  for (let i = 0; i < notes.length; i++) {
+    const [third, fifth, seventh] = harmonize(notes[i]);
+  }
+
 }
 
 export function stopKeys(pressedKey: string, playedKeys: Map<string, boolean>) {
