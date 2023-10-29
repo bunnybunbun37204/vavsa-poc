@@ -31,7 +31,7 @@ function getQueryParamValue(parameter : any) {
 const songId = getQueryParamValue('params');
 console.log('Song Note:', songId);
 
-window?.addEventListener("keydown", async (event) => {
+window?.addEventListener("touchstart", async (event) => {
   if (!isStarted) {
     isStarted = true;
     await init();
@@ -95,9 +95,7 @@ function startPlayingKeys() {
 }
 
 function playKeysOnClick() {
-  console.log("Hello");
-  alert("OK");
-  
+  console.log("Hello");  
   if (!isStarted) {
     isStarted = true;
     init(); // No need to await here
@@ -114,7 +112,19 @@ function playKeysOnClick() {
 document.getElementById("playButton")?.addEventListener("click", playKeysOnClick);
 
 // Event listener for touch event
-document.getElementById("playButton")?.addEventListener("touchstart", playKeysOnClick);
+document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
+  event.preventDefault(); // Prevent default touch behavior to ensure the event is only used for the intended purpose
+
+  if (!isStarted) {
+    isStarted = true;
+    await init();
+  }
+
+  if (typeof songId === "string") {
+    const notes = songId.split(",");
+    playKeys2(notes);
+  }
+});
 
 
 async function exportAudio() {
