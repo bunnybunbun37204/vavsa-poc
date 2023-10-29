@@ -108,7 +108,16 @@ function playKeysOnClick() {
 
 // Event listener for click event
 
-document.getElementById("playButton")?.addEventListener("touchstart", playKeysOnClick);
+document.getElementById("playButton")?.addEventListener("touchstart", (event) => {
+  if (!isStarted) {
+    isStarted = true;
+    init();
+  }
+    if (typeof songId === "string") {
+    const notes = songId.split(",");
+    playKeys2(notes);
+  }
+});
 
 // Event listener for touch event
 // document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
