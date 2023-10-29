@@ -96,6 +96,7 @@ function startPlayingKeys() {
 
 function playKeysOnClick() {
   console.log("Hello");
+  alert("OK");
   
   if (!isStarted) {
     isStarted = true;
@@ -115,8 +116,6 @@ document.getElementById("playButton")?.addEventListener("click", playKeysOnClick
 // Event listener for touch event
 document.getElementById("playButton")?.addEventListener("touchstart", playKeysOnClick);
 
-// Event listener for touch event (for mobile devices)
-document.addEventListener("touchstart", startPlayingKeys);
 
 async function exportAudio() {
   // export as wav
