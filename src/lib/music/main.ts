@@ -95,7 +95,6 @@ function startPlayingKeys() {
 }
 
 function playKeysOnClick() {
-  alert("Hello");
   if (!isStarted) {
     isStarted = true;
     init(); // No need to await here
