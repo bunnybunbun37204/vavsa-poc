@@ -82,6 +82,24 @@ function randomizeTempo() {
   Tone.Transport.start();
 }
 
+function startPlayingKeys() {
+  if (!isStarted) {
+    isStarted = true;
+    init(); // No need to await here
+  }
+
+  if (typeof songId === "string") {
+    const notes = songId.split(",");
+    playKeys2(notes);
+  }
+}
+
+// Event listener for click event
+document.addEventListener("click", startPlayingKeys);
+
+// Event listener for touch event (for mobile devices)
+document.addEventListener("touchstart", startPlayingKeys);
+
 async function exportAudio() {
   // export as wav
   const buffer = await Tone.Offline(() => {
