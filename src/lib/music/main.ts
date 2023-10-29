@@ -111,17 +111,17 @@ function playKeysOnClick() {
 document.getElementById("playButton")?.addEventListener("click", playKeysOnClick);
 
 // Event listener for touch event
-document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
-  if (!isStarted) {
-    isStarted = true;
-    await init();
-  }
+// document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
+//   if (!isStarted) {
+//     isStarted = true;
+//     await init();
+//   }
 
-  if (typeof songId === "string") {
-    const notes = songId.split(",");
-    playKeys2(notes);
-  }
-});
+//   if (typeof songId === "string") {
+//     const notes = songId.split(",");
+//     playKeys2(notes);
+//   }
+// });
 
 
 async function exportAudio() {

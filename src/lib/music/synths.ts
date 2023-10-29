@@ -102,7 +102,7 @@ export const mainSynth = new Tone.PolySynth({
 
 // harmony
 export const harmonySynth = new Tone.PolySynth({
-  volume: -5,
+  volume: -10,
   maxPolyphony: 100,
   voice: Tone.MonoSynth,
   options: {
