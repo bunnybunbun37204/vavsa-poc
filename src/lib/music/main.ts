@@ -108,29 +108,18 @@ function playKeysOnClick() {
 
 // Event listener for click event
 
-document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
+// Event listener for touch event
+document.getElementById("playButton")?.addEventListener("click", async (event) => {
   if (!isStarted) {
     isStarted = true;
     await init();
   }
-    if (typeof songId === "string") {
+
+  if (typeof songId === "string") {
     const notes = songId.split(",");
     playKeys2(notes);
   }
 });
-
-// Event listener for touch event
-// document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
-//   if (!isStarted) {
-//     isStarted = true;
-//     await init();
-//   }
-
-//   if (typeof songId === "string") {
-//     const notes = songId.split(",");
-//     playKeys2(notes);
-//   }
-// });
 
 
 async function exportAudio() {
