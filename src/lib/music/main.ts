@@ -109,7 +109,6 @@ function playKeysOnClick() {
 }
 
 // Event listener for click event
-document.addEventListener("click", startPlayingKeys);
 
 document.getElementById("playButton")?.addEventListener("click", playKeysOnClick);
 
