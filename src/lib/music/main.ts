@@ -113,8 +113,6 @@ document.getElementById("playButton")?.addEventListener("click", playKeysOnClick
 
 // Event listener for touch event
 document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
-  event.preventDefault(); // Prevent default touch behavior to ensure the event is only used for the intended purpose
-
   if (!isStarted) {
     isStarted = true;
     await init();
