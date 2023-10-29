@@ -112,6 +112,8 @@ function playKeysOnClick() {
 
 document.getElementById("playButton")?.addEventListener("click", playKeysOnClick);
 
+// Event listener for touch event
+document.getElementById("playButton")?.addEventListener("touchstart", playKeysOnClick);
 
 // Event listener for touch event (for mobile devices)
 document.addEventListener("touchstart", startPlayingKeys);
