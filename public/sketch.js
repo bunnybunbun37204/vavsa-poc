@@ -26,7 +26,7 @@ function setObject() {
   stroke(0, 60, 90);
   strokeWeight((_minW / 400) * pixelDensity()); //600 * pixelDensity());
 
-  let numRing = 100;
+  let numRing = 50;
   let posXy = createVector(0, 0);
   let posZNoiseInit_0 = [random(10000), random(10000), random(10000)];
   let rNoiseInit_0 = [random(10000), random(10000), random(10000)];
