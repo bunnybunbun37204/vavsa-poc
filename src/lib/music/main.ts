@@ -107,9 +107,10 @@ function playKeysOnClick() {
 }
 
 // Event listener for click event
+document.getElementById('playButto')?.addEventListener("click", playKeysOnClick)
 
 // Event listener for touch event
-document.getElementById("playButton")?.addEventListener("click", async (event) => {
+document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
   if (!isStarted) {
     isStarted = true;
     await init();
