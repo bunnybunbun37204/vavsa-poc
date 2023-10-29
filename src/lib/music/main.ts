@@ -94,8 +94,25 @@ function startPlayingKeys() {
   }
 }
 
+function playKeysOnClick() {
+  console.log("Hello");
+  
+  if (!isStarted) {
+    isStarted = true;
+    init(); // No need to await here
+  }
+
+  if (typeof songId === "string") {
+    const notes = songId.split(",");
+    playKeys2(notes);
+  }
+}
+
 // Event listener for click event
 document.addEventListener("click", startPlayingKeys);
+
+document.getElementById("playButton")?.addEventListener("click", playKeysOnClick);
+
 
 // Event listener for touch event (for mobile devices)
 document.addEventListener("touchstart", startPlayingKeys);
