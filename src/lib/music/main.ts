@@ -108,10 +108,10 @@ function playKeysOnClick() {
 
 // Event listener for click event
 
-document.getElementById("playButton")?.addEventListener("touchstart", (event) => {
+document.getElementById("playButton")?.addEventListener("touchstart", async (event) => {
   if (!isStarted) {
     isStarted = true;
-    init();
+    await init();
   }
     if (typeof songId === "string") {
     const notes = songId.split(",");
