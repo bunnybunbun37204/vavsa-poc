@@ -24,9 +24,9 @@ export function playKeys2(notes : string[]) {
   // record the sounds
   arpPart.values = notes;
   arpPart.start(0);
-  // for (let i = 0; i < notes.length; i++) {
-  //   const [third, fifth, seventh] = harmonize(notes[i]);
-  // }
+  for (let i = 0; i < notes.length; i++) {
+    const [third, fifth, seventh] = harmonize(notes[i]);
+  }
 
 }
 
